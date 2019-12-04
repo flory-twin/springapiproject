@@ -12,7 +12,7 @@
 
 
 Search by: 
-<form action="">
+<form action="searching">
 <input type="text" class="textbox" name="name" placeholder="Enter movie name">
 <input type="number" class="number" name="year" placeholder="Enter movie release year">
 <input type="text" class="textbox" name="genre" placeholder="Enter movie genre">
