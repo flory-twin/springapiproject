@@ -53,11 +53,15 @@ if (document.getElementById('searchTypeSelector').selectedIndex == '0' ) {
 	<table class="table">
 		<tr>
 			<th>Name</th>
+			<th>Image</th>
 		</tr>
 		<c:forEach var="m" items="${response.getResults() }">
 
 			<tr>
 				<td>${m.title }</td>
+				<td>
+					<img src="${ m.getImageUrl() }"/>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

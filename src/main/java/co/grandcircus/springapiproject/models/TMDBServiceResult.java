@@ -2,15 +2,20 @@ package co.grandcircus.springapiproject.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TMDBServiceResult {
 
 	public static final String imageBaseUrl = "https://image.tmdb.org/t/p/w185_and_h278_bestv2/";
 
 	private String id;
 	private String title;
+	@JsonProperty("genre_ids")
 	private List<Integer> genreIds;
 	private String overview;
+	@JsonProperty("release_date")
 	private String releaseDate;
+	@JsonProperty("poster_path")
 	private String posterPath;
 
 	public String getImageUrl() {

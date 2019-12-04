@@ -1,9 +1,13 @@
 package co.grandcircus.springapiproject.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class watchlist {
 
-	private Integer id;
-	private String name;
+	@Id
+	private String id;
 	private String img;
 
 	public watchlist() {
@@ -11,32 +15,23 @@ public class watchlist {
 		// TODO Auto-generated constructor stub
 	}
 
-	public watchlist(Integer id) {
+	public watchlist(String id) {
 		super();
 		this.id = id;
 	}
 
-	public watchlist(Integer id, String name, String img) {
+	public watchlist(String id, String img) {
 		super();
 		this.id = id;
-		this.name = name;
 		this.img = img;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getImg() {
@@ -45,11 +40,6 @@ public class watchlist {
 
 	public void setImg(String img) {
 		this.img = img;
-	}
-
-	@Override
-	public String toString() {
-		return "watchlist [id=" + id + ", name=" + name + ", img=" + img + "]";
 	}
 
 }
