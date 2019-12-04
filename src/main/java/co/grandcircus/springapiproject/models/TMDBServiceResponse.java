@@ -1,6 +1,9 @@
 package co.grandcircus.springapiproject.models;
 
-@Component
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 public class TMDBServiceResponse {
 	
 	private List<TMDBServiceResult> results;

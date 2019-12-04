@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+${ 1+1 }
 Search by: 
 <form action="">
 <input type="text" class="textbox" name="name" placeholder="Enter movie name">
