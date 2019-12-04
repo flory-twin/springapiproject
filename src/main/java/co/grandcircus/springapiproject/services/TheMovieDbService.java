@@ -1,16 +1,46 @@
 package co.grandcircus.springapiproject.services;
 
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
 import co.grandcircus.springapiproject.models.TMDBServiceGenreResponse;
 import co.grandcircus.springapiproject.models.TMDBServiceResponse;
 
+@Component
 public class TheMovieDbService {
 
-	public static final String baseUrl = "https://api.themoviedb.org/3/";
-	public static final String discoverResource = "/discover/movie";
-	public static final String baseGenreUrl = baseUrl + "genre/movie/list";
+	RestTemplate rt = new RestTemplate();
+	
+	public static final String baseUrl = "https://api.themoviedb.org/3";
+	public static final String discoverResource = "/search/movie";
+	public static final String baseGenreUrl = baseUrl + "/genre/movie/list";
+	
+	@Value("${moviedb.key}")
+	private String apiKey;
+	
+	private HashMap<String, String> getParamsWithApiKey() {
+		HashMap<String, String> params = new HashMap<>();
+		params.put("api_key", apiKey);
+		
+		return params;
+	}
 	
 	public TMDBServiceResponse searchMoviesByName(String name) {
-		return null;
+		HashMap<String, String> params = getParamsWithApiKey();
+		params.put("query", name);
+		
+		String url = baseUrl + discoverResource + "?api_key=" + apiKey + "&query=" + name;
+		TMDBServiceResponse response = rt.getForObject(url, TMDBServiceResponse.class);
+		//HttpEntity<TMDBServiceResponse> resp = rt.exchange(baseUrl + discoverResource, HttpMethod.GET, 
+		//		new HttpEntity<String>("parameters", params), TMDBServiceResponse.class);
+		//TMDBServiceResponse response = rt.getForObject(baseUrl + discoverResource, TMDBServiceResponse.class, params);
+		
+		return response;
 	}
 	
 	public TMDBServiceResponse searchMoviesByYear(Integer year) {
