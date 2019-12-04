@@ -12,5 +12,14 @@ public class HomeController {
 		return new ModelAndView("index");
 	}
 	
+	@RequestMapping("watchlist")
+	public ModelAndView watchList() {
+		return new ModelAndView("watchlist");
+	}
+	
+	@RequestMapping("searchmovie")
+	public ModelAndView searchMovie() {
+		return new ModelAndView("searchmovie");
+	}
 	
 }

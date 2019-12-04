@@ -9,9 +9,10 @@
 <title>home</title>
 </head>
 <body>
-
-
-testing!
+<div align="right">
+<a class="btn btn-primary" href="searchmovie">Search Movie</a>
+<a class="btn btn-primary" href="watchlist">Watch-list</a>
+</div>
 
 
 </body>
