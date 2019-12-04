@@ -10,12 +10,35 @@
 </head>
 <body>
 
-${ 1+1 }
 Search by: 
 <form action="searching">
-<input type="text" class="textbox" name="name" placeholder="Enter movie name">
-<input type="number" class="number" name="year" placeholder="Enter movie release year">
-<input type="text" class="textbox" name="genre" placeholder="Enter movie genre">
+	<select id="searchTypeSelector" name="searchType" oninput="console.log('dammit')" onchange="
+console.log('starting');
+console.log('Text value:' + document.getElementById('searchTypeSelector').textContent);
+if (document.getElementById('searchTypeSelector').selectedIndex == '0' ) {
+	console.log('option 0');
+	document.getElementById('nameTextBox').style.display = 'inline';
+	document.getElementById('genreSelector').style.display = 'none'; 
+} else if (document.getElementById('searchTypeSelector').selectedIndex == '2' ) {
+	console.log('option 2');
+	document.getElementById('nameTextBox').style.display = 'none';
+	document.getElementById('genreSelector').style.display = 'inline';
+} else {
+	document.getElementById('nameTextBox').style.display = 'none';
+	document.getElementById('genreSelector').style.display = 'none';
+}">
+		<option value="name">Name</option>
+		<option value="year">Year</option>
+		<option value="genre">Genre</option>
+	</select>
+<input id="nameTextBox" type="text" class="textbox" name="name" placeholder="Enter movie name" style="display:none">
+<input type="number" class="number" name="year" placeholder="Enter movie release year" style="display:none">
+
+<select id="genreSelector" name="genre">
+	<option value="28">Action</option>
+	<option value="12">Adventure</option>
+
+</select>
 <input type="submit" value="Submit or DEATH!" class="btn btn-primary">
 </form>
 <!-- <select>
