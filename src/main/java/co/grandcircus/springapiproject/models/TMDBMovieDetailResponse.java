@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TMDBMovieDetailResponse {
 	
+	private Integer id;
 	private String title, overview;
 	private boolean adult;
 	private List<TMDBServiceGenre> genres;
@@ -15,10 +16,15 @@ public class TMDBMovieDetailResponse {
 	private List<TMDBMovieProductionCompany> productionCompany;
 	@JsonProperty("release_date")
 	private String releaseDate;
-	
-	public TMDBMovieDetailResponse(String title, String overview, boolean adult, List<TMDBServiceGenre> genres,
-			String posterPath, List<TMDBMovieProductionCompany> productionCompany, String releaseDate) {
+	public TMDBMovieDetailResponse() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+	public TMDBMovieDetailResponse(Integer id, String title, String overview, boolean adult,
+			List<TMDBServiceGenre> genres, String posterPath, List<TMDBMovieProductionCompany> productionCompany,
+			String releaseDate) {
+		super();
+		this.id = id;
 		this.title = title;
 		this.overview = overview;
 		this.adult = adult;
@@ -27,9 +33,11 @@ public class TMDBMovieDetailResponse {
 		this.productionCompany = productionCompany;
 		this.releaseDate = releaseDate;
 	}
-	public TMDBMovieDetailResponse() {
-		super();
-		// TODO Auto-generated constructor stub
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -73,7 +81,5 @@ public class TMDBMovieDetailResponse {
 	public void setReleaseDate(String releaseDate) {
 		this.releaseDate = releaseDate;
 	}
-
-	
-	
+		
 }

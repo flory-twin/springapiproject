@@ -8,7 +8,6 @@ import org.springframework.web.client.RestTemplate;
 
 import co.grandcircus.springapiproject.models.TMDBMovieDetailResponse;
 import co.grandcircus.springapiproject.models.TMDBServiceGenreResponse;
-import co.grandcircus.springapiproject.models.TMDBServiceMovieResponse;
 import co.grandcircus.springapiproject.models.TMDBServiceResponse;
 
 @Component

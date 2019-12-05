@@ -47,5 +47,10 @@
 	
 	
 	<a href="/searchmovie" class="btn btn-primary">Back to Search</a>
+	<form action="/add-watchlist">
+		<input type="hidden" name="id" value="${ details.getId() }"/>
+		<input type="submit" value="Add Movie To Watchlist"/>
+	</form>
+	<a href="/add-watchlist" class="btn btn-primary">Add to Watch-list</a>
 </body>
 </html>
