@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import co.grandcircus.springapiproject.jpaRepos.WatchListRepos;
 import co.grandcircus.springapiproject.services.TheMovieDbService;
 
 @Controller
@@ -16,9 +17,12 @@ public class HomeController {
 	TheMovieDbService tmdbs;
 	@Autowired
 	HttpSession session;
+	@Autowired
+	WatchListRepos wR;
 	
 	@RequestMapping("/")
 	public ModelAndView home() {
+		session.setAttribute("wR", wR);
 		return new ModelAndView("index");
 	}
 

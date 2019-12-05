@@ -42,6 +42,7 @@ public class SearchController {
 
 	@RequestMapping("add-watchlist")
 	public ModelAndView addTeamName(String id) {
+		
 		TMDBServiceResult toBeAdded = null;
 		for (TMDBServiceResult tsr : ((TMDBServiceResponse) session.getAttribute("response")).getResults()) {
 			if (tsr.getId().equals(id)) {
