@@ -58,7 +58,9 @@ if (document.getElementById('searchTypeSelector').selectedIndex == '0' ) {
 		<c:forEach var="m" items="${response.getResults() }">
 
 			<tr>
-				<td>${m.title }</td>
+				<td>
+					<a href="/details/movie?id=${m.id}">${m.title }</a>
+				</td>
 				<td>
 					<img src="${ m.getImageUrl() }"/>
 				</td>
