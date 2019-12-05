@@ -25,9 +25,12 @@
 			<tr>
 				<td><a>${m.name }</a></td>
 				<td><img src="${ m.img }" /></td>
+				<td><a href="/delete-watchlist?id=${ m.tmdbId }" class="btn btn-primary">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<a class="btn btn-primary" href="/">Back to Home</a>
 
 
 </body>

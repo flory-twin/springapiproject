@@ -55,4 +55,11 @@ public class SearchController {
 		return new ModelAndView("redirect:/searchmovie");
 	}
 	
+	@RequestMapping("delete-watchlist")
+	public ModelAndView getEmOuttaHere(String id) {
+		watchlist toBeDeleted = wR.findByTmdbId(id);
+		wR.delete(toBeDeleted);
+		return new ModelAndView("redirect:/searchmovie");
+	}
+	
 }
